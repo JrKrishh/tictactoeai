@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .game-cell {
+    @apply w-20 h-20 border-2 border-gray-300 flex items-center justify-center text-3xl font-bold cursor-pointer transition-all duration-200 hover:bg-blue-50 hover:border-blue-400;
+  }
+  
+  .game-cell:hover {
+    transform: scale(1.05);
+  }
+  
+  .game-cell.disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+  
+  .player-x {
+    @apply text-blue-600;
+  }
+  
+  .player-o {
+    @apply text-red-600;
+  }
+  
+  .winning-cell {
+    @apply bg-green-200 border-green-400;
+    animation: pulse 1s infinite;
+  }
+  
+  .strategy-card {
+    @apply bg-white rounded-lg shadow-md p-4 border-2 border-transparent cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-blue-300;
+  }
+  
+  .strategy-card.selected {
+    @apply border-blue-500 bg-blue-50;
+  }
+  
+  .feedback-form {
+    @apply bg-white rounded-lg shadow-lg p-6 border border-gray-200;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-success {
+    @apply bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+}
